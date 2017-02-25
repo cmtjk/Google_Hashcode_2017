@@ -27,7 +27,7 @@ public class Cache {
 
     public void addRequest(Request request) {
         if (requests.containsKey(request.videoId)) {
-            // TODO REQUEST ID
+            // TODO Requests should be mapped to their merged counterpart
             Request mergedRequest = new Request(request.endpointId, request.videoId,
                     request.savings + requests.get(request.videoId).savings);
             requests.put(request.videoId, mergedRequest);

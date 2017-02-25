@@ -14,8 +14,7 @@ public class Main {
     public static void main(String... args) throws IOException {
         long start = System.currentTimeMillis();
 
-        //String[] inputFiles = { "me_at_the_zoo", "videos_worth_spreading", "trending_today", "kittens" };
-        String[] inputFiles = { "me_at_the_zoo" };
+        String[] inputFiles = { "me_at_the_zoo", "videos_worth_spreading", "trending_today", "kittens" };
 
         for (String file : inputFiles) {
             DataSet dataSet = Parser.parseFile("src/main/resources/input/" + file + ".in");
