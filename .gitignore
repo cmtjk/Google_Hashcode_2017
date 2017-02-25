@@ -37,3 +37,5 @@ bin/
 
 #Misc
 *.out
+
+.syntastic_javac_config

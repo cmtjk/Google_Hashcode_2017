@@ -12,18 +12,19 @@ import hcde.io.Writer;
 public class Main {
 
     public static void main(String... args) throws IOException {
-	long start = System.currentTimeMillis();
-	
-	String[] inputFiles = { "me_at_the_zoo", "videos_worth_spreading", "trending_today", "kittens" };
+        long start = System.currentTimeMillis();
 
-	for (String file : inputFiles) {
-	    DataSet dataSet = Parser.parseFile("src/main/resources/input/" + file + ".in");
-	    Map<Integer, List<Integer>> result = Algorithm.analyze(dataSet);
-	    Writer.write("src/main/resources/output/" + file + ".out", result);
-	}
-	
-	long end = System.currentTimeMillis();
-	System.out.format("Runtime: %d", (end - start));
+        //String[] inputFiles = { "me_at_the_zoo", "videos_worth_spreading", "trending_today", "kittens" };
+        String[] inputFiles = { "me_at_the_zoo" };
+
+        for (String file : inputFiles) {
+            DataSet dataSet = Parser.parseFile("src/main/resources/input/" + file + ".in");
+            Map<Integer, List<Integer>> result = Algorithm.analyze(dataSet);
+            Writer.write("src/main/resources/output/" + file + ".out", result);
+        }
+
+        long end = System.currentTimeMillis();
+        System.out.format("Runtime: %d", (end - start));
 
     }
 

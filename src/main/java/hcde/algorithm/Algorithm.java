@@ -12,24 +12,24 @@ public class Algorithm {
 
     public static Map<Integer, List<Integer>> analyze(DataSet dataSet) {
 
-	for (Endpoint endpoint : dataSet.endpoints.values()) {
-	    endpoint.sendRequest();
-	}
+        for (Endpoint endpoint : dataSet.endpoints.values()) {
+            endpoint.sendRequest();
+        }
 
-	for (Cache cache : dataSet.caches.values()) {
-	    cache.createInternalRanking();
-	}
+        for (Cache cache : dataSet.caches.values()) {
+            cache.createInternalRanking();
+        }
 
-	for (Cache cache : dataSet.caches.values()) {
-	    cache.storeVideos();
-	}
+        for (Cache cache : dataSet.caches.values()) {
+            cache.storeVideos();
+        }
 
-	Map<Integer, List<Integer>> result = new TreeMap<>();
-	for (Cache cache : dataSet.caches.values()) {
-	    result.put(cache.id, cache.getStoredVideos());
-	}
+        Map<Integer, List<Integer>> result = new TreeMap<>();
+        for (Cache cache : dataSet.caches.values()) {
+            result.put(cache.id, cache.getStoredVideos());
+        }
 
-	return result;
+        return result;
     }
 
 }
